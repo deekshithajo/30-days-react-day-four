@@ -1,0 +1,64 @@
+.timer-container {
+  background-size: cover;
+  box-shadow: 0px 4px 16px 0px #bfbfbf;
+  position: absolute;
+  left: 100px;
+  top: 200px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 30px;
+  
+ 
+}
+.clockheading {
+  color: #333333;
+  font-size: 20px;
+  font-family: 'roboto';
+}
+.clockimage {
+  height: 50px;
+  width: 50px;
+}
+.clockcontainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+   
+}
+.para {
+  color: #333333;
+  font-size: 50px;
+  text-align: center;
+  
+}
+.buttoncontainer {
+  display: flex;
+  flex-direction: row;
+}
+.startbutton {
+  height: 50px;
+  width: 100px;
+  border-radius: 5px;
+  color: #ffffff;
+  background-color: #1db05f;
+  margin: 10px;
+  border-style: none;
+}
+.stopbutton {
+  height: 50px;
+  width: 100px;
+  border-radius: 5px;
+  color: #ffffff;
+  background-color: #ef0d36;
+  margin: 10px;
+  border-style: none;
+}
+.resetbutton {
+  height: 50px;
+  width: 100px;
+  border-radius: 5px;
+  color: #ffffff;
+  background-color: #eaa800;
+  margin: 10px;
+  border-style: none;
+}
