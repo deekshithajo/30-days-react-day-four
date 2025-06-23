@@ -1,7 +1,10 @@
 import {Component} from 'react'
 import './index.css'
+
 class Stopwatch extends Component {
   state = {time: 0}
+
+  // Format time as MM:SS
   formattime = time => {
     const min = Math.floor(time / 60)
     const sec = time % 60
@@ -10,30 +13,35 @@ class Stopwatch extends Component {
     return `${minutes}:${seconds}`
   }
 
-  timeid = setInterval(this.start, 1000)
-
   start = () => {
     if (!this.timerId) {
       this.timerId = setInterval(this.increment, 1000)
     }
   }
+
   increment = () => {
     this.setState(prevState => ({time: prevState.time + 1}))
   }
+
   stop = () => {
     clearInterval(this.timerId)
+    this.timerId = null // Prevent multiple intervals
   }
+
   reset = () => {
     this.stop()
     this.setState({time: 0})
   }
 
+  componentWillUnmount() {
+    this.stop() // Clean up on component unmount
+  }
+
   render() {
     const {time} = this.state
     return (
-      <div class="timer-container">
+      <div className="timer-container">
         <div className="clockcontainer">
-          
           <h1 className="clockheading">Timer</h1>
         </div>
         <p className="para">{this.formattime(time)}</p>
@@ -52,4 +60,5 @@ class Stopwatch extends Component {
     )
   }
 }
+
 export default Stopwatch
